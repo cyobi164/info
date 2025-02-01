@@ -1,0 +1,12 @@
+.App{
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-color);
+  transition: background-color 250ms ease-in-out;
+}
+
+[data-theme="dark"] {
+  background-color: #121212;
+  color: #ffffff;
+}
+

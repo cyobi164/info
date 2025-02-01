@@ -1,0 +1,46 @@
+/* general animation */
+.content-section{
+  padding: 40px;
+  margin: auto;
+  max-width: 900px;
+}
+
+/*flexbox*/
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*about section*/
+.about-container{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-image{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/*skills section*/
+.skill-card{
+  background: #222;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transfom 0.3s ease;
+}
+
+.skill-card:hover{
+  transform: scale(1.05);
+}
+
+.progress-bar{
+  height: 8px;
+  background: #00f;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
