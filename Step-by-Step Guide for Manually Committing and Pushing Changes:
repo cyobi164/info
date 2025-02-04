@@ -1,0 +1,39 @@
+Step-by-Step Guide for Manually Committing and Pushing Changes:
+1. Check for Modified Files
+First, check which files have been modified in your repository:
+
+bash
+*git status
+This will show all the modified files, as well as any new untracked files.
+
+2. Stage the Changes
+To stage all the modified files, use the git add command. This prepares them to be committed.
+bash
+*git add .
+The . will stage all modified and new files. If you only want to stage specific files, you can do so by naming them individually:
+
+bash
+*git add filename
+
+3. Commit the Changes
+After staging, commit the changes with a message describing what was modified.
+bash
+*git commit -m "Your commit message here"
+
+Example:
+bash
+*git commit -m "Updated the homepage content"
+The -m option allows you to add a commit message directly in the command.
+
+4. Push the Changes
+After committing, push your changes to the remote GitHub repository.
+bash
+*git push origin main
+This pushes your changes to the main branch. If you're using a different branch, replace main with the appropriate branch name.
+
+5. Verify the Push
+After pushing, you can check on GitHub or use:
+
+bash
+*git log
+This will show you the commit history and confirm that your changes were pushed successfully.
