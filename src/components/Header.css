@@ -45,19 +45,19 @@
 /* Optional: Make nav items responsive */
 @media (max-width: 768px) {
   .custom-navbar {
-    padding: 12px 10px; /* Reduce padding to fit better */
+    padding: 12px 10px !important; /* Force padding */
   }
 
   .nav {
-    flex-direction: row; /* Keep items in a row */
-    flex-wrap: wrap; /* Allow wrapping if needed */
-    justify-content: center; /* Keep links centered */
-    gap: 10px; /* Reduce spacing */
+    flex-direction: row !important; /* Ensure row layout */
+    flex-wrap: wrap !important; /* Allow wrapping */
+    justify-content: center !important; /* Center links */
+    gap: 10px !important; /* Force spacing */
   }
 
   .nav-link {
-    font-size: 0.9rem; /* Slightly smaller font size for mobile */
-    padding: 5px 8px; /* Adjust padding to fit small screens */
+    font-size: 0.9rem !important; /* Force font size */
+    padding: 5px 8px !important; /* Ensure padding applies */
   }
 }
 
