@@ -65,7 +65,8 @@
 
   /* Adjust the position of the toggle button in mobile */
   .toggle-container {
-    top: 0.5em; /* Adjust this to fine-tune the position */
+    position: absolute;
+    top: 10px; /* Adjust this to fine-tune the position */
     right: 2em;
     z-index: 1010; /* Ensure it stays above the navbar */
   }
