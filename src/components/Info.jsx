@@ -1,13 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJs } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact} from "react-icons/fa";
 import "./Info.css";
 import GhostPic from "../assets/photo/GhostPic.jpg";
 
 const skills = [
-  { name: "HTML", level: 90, icon: <FaHtml5 className="text-orange-500" /> },
-  { name: "CSS", level: 90, icon: <FaCss3Alt className="text-blue-500" /> },
-  { name: "JavaScript", level: 90, icon: <FaJs className="text-yellow-500" /> },
+  { name: "HTML", level: 90, icon: <FaHtml5 style={{ color: '#f16529' }} /> }, // Orange color for HTML
+  { name: "CSS", level: 90, icon: <FaCss3Alt style={{ color: '#2965f1' }} /> }, // Blue color for CSS
+  { name: "JavaScript", level: 90, icon: <FaJs style={{ color: '#f7df1e' }} /> }, // Yellow color for JavaScript
+  { name: "React", level: 90, icon: <FaReact style={{ color: '#61dafb' }} /> }, // Light blue color for React
 ];
 
 const projects = [

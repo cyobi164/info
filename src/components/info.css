@@ -64,6 +64,10 @@
   transition: transform 0.3s ease-in-out;
   background: var(--skill-card-background);
   box-shadow: var(--skill-card-shadow);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 160px;
 }
 
 .skill-card:hover {
@@ -71,8 +75,9 @@
 }
 
 .skill-icon {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 10px;
+  color: inherit;
 }
 
 /* Light & Dark Mode Variables */
