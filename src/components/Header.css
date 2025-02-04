@@ -45,32 +45,32 @@
 /* Optional: Make nav items responsive */
 @media (max-width: 768px) {
   .custom-navbar {
-    padding: 12px 10px !important; /* Force padding */
+    padding: 12px 10px !important;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center everything */
+    align-items: center;
   }
 
   .nav {
-    flex-direction: row !important; /* Ensure row layout */
-    flex-wrap: wrap !important; /* Allow wrapping */
-    justify-content: center !important; /* Center links */
-    gap: 10px !important; /* Force spacing */
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
   }
 
   .nav-link {
-    font-size: 0.9rem !important; /* Force font size */
-    padding: 5px 8px !important; /* Ensure padding applies */
+    font-size: 0.9rem !important;
+    padding: 5px 8px !important;
   }
-  
-  .dark-mode-toggle {
-    margin-top: 10px; /* Add spacing from navbar */
-    display: flex;
-    align-items: center; /* Align toggle and text */
-    justify-content: center; /* Center it */
-    gap: 5px; /* Space between toggle and label */
+
+  /* Adjust the position of the toggle button in mobile */
+  .toggle-container {
+    top: 0.5em; /* Adjust this to fine-tune the position */
+    right: 2em;
+    z-index: 1010; /* Ensure it stays above the navbar */
   }
 }
+
 
 
 
