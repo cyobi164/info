@@ -11,6 +11,12 @@
   color: var(--text-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
   transition: background-color 0.3s ease-in-out;
+  
+}
+
+/* Add a white border in dark mode */
+[data-theme="dark"] .custom-navbar {
+  border-bottom: 2px solid white;
 }
 
 /* Center align the nav items */

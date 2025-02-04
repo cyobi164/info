@@ -54,29 +54,14 @@ function Info() {
 
       {/*skill section */}
       <section id="skill" className="content-section">
-        <div className="skill">
-          <h2>My Skill</h2>
-          <div className="grid gap-4">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="p-4 hover:shadow-lg transition-shadow"
-              >
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold flex items-center gap-2">
-                    {skill.icon} {skill.name}
-                  </span>
-                  <span>{skill.level}</span>
-                </div>
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${skill.level}%` }}
-                  transition={{ duration: 1 }}
-                  className="h-2 bg-blue-500 rounded-md mt-2"
-                />
-              </div>
-            ))}
-          </div>
+        <h2>My Skill</h2>
+        <div className="skill-container">
+          {skills.map((skill, index) => (
+            <div key={index} className="skill-card">
+              <div className="skill-icon">{skill.icon}</div>
+              <h3>{skill.name}</h3>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -98,7 +83,9 @@ function Info() {
 
       <section id="contact" className="content-section">
         <div className="contact">
-        <button type="button" class="btn btn-primary btn-lg">Contact Me</button>
+          <button type="button" class="btn btn-primary btn-lg">
+            Contact Me
+          </button>
         </div>
       </section>
     </>
@@ -106,3 +93,6 @@ function Info() {
 }
 
 export default Info;
+{
+  /* }<span className="progress-text">{skill.level}%</span> #PROGRESS BAR*/
+}
