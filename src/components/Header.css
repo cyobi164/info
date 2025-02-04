@@ -45,14 +45,22 @@
 /* Optional: Make nav items responsive */
 @media (max-width: 768px) {
   .custom-navbar {
-    padding: 15px 0; /* Add more padding for smaller screens */
+    padding: 12px 10px; /* Reduce padding to fit better */
   }
 
   .nav {
-    flex-direction: column; /* Stack nav items vertically */
-    gap: 10px;
+    flex-direction: row; /* Keep items in a row */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    justify-content: center; /* Keep links centered */
+    gap: 10px; /* Reduce spacing */
+  }
+
+  .nav-link {
+    font-size: 0.9rem; /* Slightly smaller font size for mobile */
+    padding: 5px 8px; /* Adjust padding to fit small screens */
   }
 }
+
 
 
 /* Default Light Mode Variables */

@@ -38,15 +38,15 @@ function Info() {
           <div className="about-text">
             <h1>About Me</h1>
             <p>
-              I'm a freelancer web developer passionate about building clean,
+              I'm a web developer passionate about building clean,
               user-friendly website. My main focus is on HTML, CSS, JavaScript,
               ensuring responsive and engaging experiences. I enjoy continuously
               learning to expand my skill set.
             </p>
             <p>
-              🔹 Languages: English, Japanese <br />
-              🔹 Skills: Frontend development, Web design <br />
-              🔹 Looking for: Freelance projects & collaborations
+              ・ Languages: English, Japanese <br />
+              ・ Skills: Frontend development, Web design <br />
+              ・ Looking for: Freelance projects & collaborations
             </p>
           </div>
         </div>
