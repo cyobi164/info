@@ -15,7 +15,7 @@ const projects = [
   {
     name: "portfolio Website",
     description: "A personal portfolio showcasing my skill and projects.",
-    link: "#",
+    link: "https://cyobi164.github.io/info/",
   },
   {
     name: "E-commerce UI",
@@ -84,7 +84,7 @@ function Info() {
 
       <section id="contact" className="content-section">
         <div className="contact">
-          <button type="button" class="btn btn-primary btn-lg">
+          <button type="button" className="btn btn-primary btn-lg">
             Contact Me
           </button>
         </div>

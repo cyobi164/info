@@ -4,7 +4,10 @@ import Toggle from "./components/Toggle"; // Import the Toggle component
 import Header from "./components/Header"; // Import the Header component
 import useLocalStorage from "use-local-storage";
 import Info from './components/Info'
-import CanvasAnimation from './components/CanvasAnimation';
+import ParticlesBackground from "./components/particles/ParticlesBackground";
+
+
+
 
 export const App = () => {
   // Check system's dark mode preference
@@ -18,9 +21,13 @@ export const App = () => {
 
   return (
     <div className="App" data-theme={isDark ? "dark" : "light"}>
+      {/*background particle animation */}
+      <ParticlesBackground isDark={isDark} />
+      
       {/* Header Component */}
       <Header isChecked={isDark} handleChange={handleToggle}/>
 
+      {/*main content */}
       <Info />
     </div>
   );
