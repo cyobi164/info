@@ -21,52 +21,73 @@ const ParticlesBackground = ({ isDark }) => {
   }, []);
 
   return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      options={{
-        fullScreen: { enable: true, zIndex: -1 },
-        background: { color: isDark ? "#121212" : "#ffffff" },
-        particles: {
-          color: {
-            value: isDark ? "#ffffff" : "#000000",
-          },
-          number: {
-            value: isMobile ? 50 : 100, // Decrease particle number for mobile
-            density: {
-              enable: true,
-              value_area: isMobile ? 400 : 800, // Adjust density for mobile
+    <>
+      {isMobile ? (
+        // Mobile fallback background
+        <div
+          className="mobile-background"
+          style={{
+            backgroundColor: isDark ? "#121212" : "#ffffff",
+            height: "100vh",
+            width: "100%",
+            overflow: "hidden",
+          }}
+        >
+          <p style={{ color: isDark ? "#ffffff" : "#000000" }}>
+            This is a simpler background on mobile.
+          </p>
+        </div>
+      ) : (
+        // Particles animation for desktop
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          style={{ height: "100vh" }} // Set height to full screen
+          options={{
+            fullScreen: { enable: true, zIndex: -1 },
+            background: { color: isDark ? "#121212" : "#ffffff" },
+            particles: {
+              color: {
+                value: isDark ? "#ffffff" : "#000000",
+              },
+              number: {
+                value: isMobile ? 30 : 100, // Reduce particles on mobile
+                density: {
+                  enable: true,
+                  value_area: isMobile ? 400 : 800, // Adjust density for mobile
+                },
+              },
+              shape: { type: "circle" },
+              opacity: { value: 0.5, random: true },
+              size: { value: isMobile ? 1 : 3, random: true }, // Smaller size for mobile
+              links: {
+                enable: true,
+                distance: 150,
+                color: isDark ? "#ffffff" : "#000000",
+                opacity: 0.4,
+                width: 1.5,
+              },
+              move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                outModes: { default: "out" },
+              },
             },
-          },
-          shape: { type: "circle" },
-          opacity: { value: 0.5, random: true },
-          size: { value: isMobile ? 2 : 3, random: true }, // Smaller size for mobile
-          links: {
-            enable: true,
-            distance: 150,
-            color: isDark ? "#ffffff" : "#000000",
-            opacity: 0.4,
-            width: 1.5,
-          },
-          move: {
-            enable: true,
-            speed: 2,
-            direction: "none",
-            outModes: { default: "out" },
-          },
-        },
-        interactivity: {
-          events: {
-            onHover: { enable: true, mode: "repulse" },
-            onClick: { enable: true, mode: "push" },
-          },
-          modes: {
-            repulse: { distance: 100 },
-            push: { quantity: 4 },
-          },
-        },
-      }}
-    />
+            interactivity: {
+              events: {
+                onHover: { enable: true, mode: "repulse" },
+                onClick: { enable: true, mode: "push" },
+              },
+              modes: {
+                repulse: { distance: 100 },
+                push: { quantity: 4 },
+              },
+            },
+          }}
+        />
+      )}
+    </>
   );
 };
 
