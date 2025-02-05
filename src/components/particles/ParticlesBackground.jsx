@@ -23,16 +23,16 @@ const ParticlesBackground = ({ isDark }) => {
   return (
     <>
       {isMobile ? (
-        // Mobile fallback background
+        // Mobile fallback background (e.g., simple static background or gradient)
         <div
           className="mobile-background"
           style={{
             backgroundColor: isDark ? "#121212" : "#ffffff",
             height: "100vh",
             width: "100%",
-            overflow: "hidden",
           }}
         >
+          {/* You can add any fallback design here */}
           <p style={{ color: isDark ? "#ffffff" : "#000000" }}>
             This is a simpler background on mobile.
           </p>
@@ -42,9 +42,8 @@ const ParticlesBackground = ({ isDark }) => {
         <Particles
           id="tsparticles"
           init={particlesInit}
-          style={{ height: "100vh" }} // Set height to full screen
           options={{
-            fullScreen: { enable: true, zIndex: -1 },
+            fullScreen: { enable: true, zIndex: 10 }, // Higher z-index to ensure particles are on top
             background: { color: isDark ? "#121212" : "#ffffff" },
             particles: {
               color: {
@@ -84,6 +83,8 @@ const ParticlesBackground = ({ isDark }) => {
                 push: { quantity: 4 },
               },
             },
+            detectRetina: true, // Ensures retina display compatibility
+            debug: true, // Enable debug to track rendering
           }}
         />
       )}
