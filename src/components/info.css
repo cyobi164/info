@@ -102,6 +102,37 @@
     flex-direction: column;
     text-align: center;
   }
+  /*skills section*/
+.skill-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.skill-card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  background: var(--skill-card-background);
+  box-shadow: var(--skill-card-shadow);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+}
+
+.skill-icon {
+  font-size: 4rem;
+  margin-bottom: 5px;
+  color: inherit;
+}
 }
 
 
