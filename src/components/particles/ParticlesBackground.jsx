@@ -5,13 +5,12 @@ import { loadSlim } from "tsparticles-slim";
 const ParticlesBackground = ({ isDark }) => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if the device is mobile
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust this to your desired mobile breakpoint
+      setIsMobile(window.innerWidth <= 768);
     };
     window.addEventListener("resize", handleResize);
-    handleResize(); // Check on mount
+    handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -21,74 +20,48 @@ const ParticlesBackground = ({ isDark }) => {
   }, []);
 
   return (
-    <>
-      {isMobile ? (
-        // Mobile fallback background (e.g., simple static background or gradient)
-        <div
-          className="mobile-background"
-          style={{
-            backgroundColor: isDark ? "#121212" : "#ffffff",
-            height: "100vh",
-            width: "100%",
-          }}
-        >
-          {/* You can add any fallback design here */}
-          <p style={{ color: isDark ? "#ffffff" : "#000000" }}>
-            This is a simpler background on mobile.
-          </p>
-        </div>
-      ) : (
-        // Particles animation for desktop
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          options={{
-            fullScreen: { enable: true, zIndex: 10 }, // Higher z-index to ensure particles are on top
-            background: { color: isDark ? "#121212" : "#ffffff" },
-            particles: {
-              color: {
-                value: isDark ? "#ffffff" : "#000000",
-              },
-              number: {
-                value: isMobile ? 30 : 100, // Reduce particles on mobile
-                density: {
-                  enable: true,
-                  value_area: isMobile ? 400 : 800, // Adjust density for mobile
-                },
-              },
-              shape: { type: "circle" },
-              opacity: { value: 0.5, random: true },
-              size: { value: isMobile ? 1 : 3, random: true }, // Smaller size for mobile
-              links: {
-                enable: true,
-                distance: 150,
-                color: isDark ? "#ffffff" : "#000000",
-                opacity: 0.4,
-                width: 1.5,
-              },
-              move: {
-                enable: true,
-                speed: 2,
-                direction: "none",
-                outModes: { default: "out" },
-              },
-            },
-            interactivity: {
-              events: {
-                onHover: { enable: true, mode: "repulse" },
-                onClick: { enable: true, mode: "push" },
-              },
-              modes: {
-                repulse: { distance: 100 },
-                push: { quantity: 4 },
-              },
-            },
-            detectRetina: true, // Ensures retina display compatibility
-            debug: true, // Enable debug to track rendering
-          }}
-        />
-      )}
-    </>
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={{
+        fullScreen: { enable: true, zIndex: 10 },
+        background: { color: isDark ? "#121212" : "#ffffff" },
+        particles: {
+          color: { value: isDark ? "#ffffff" : "#000000" },
+          number: {
+            value: isMobile ? 30 : 100, // Reduce particles on mobile
+            density: { enable: true, value_area: isMobile ? 400 : 800 },
+          },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: isMobile ? 1 : 3, random: true },
+          links: {
+            enable: true,
+            distance: 150,
+            color: isDark ? "#ffffff" : "#000000",
+            opacity: 0.4,
+            width: 1.5,
+          },
+          move: {
+            enable: true,
+            speed: isMobile ? 1 : 2, // Reduce speed for mobile
+            direction: "none",
+            outModes: { default: "out" },
+          },
+        },
+        interactivity: {
+          events: {
+            onHover: { enable: true, mode: "repulse" },
+            onClick: { enable: true, mode: "push" },
+          },
+          modes: {
+            repulse: { distance: 100 },
+            push: { quantity: 4 },
+          },
+        },
+        detectRetina: true,
+      }}
+    />
   );
 };
 
