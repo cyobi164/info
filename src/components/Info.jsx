@@ -100,4 +100,3 @@ function Info() {
 }
 
 export default Info;
-{/* }<span className="progress-text">{skill.level}%</span> #PROGRESS BAR*/}
