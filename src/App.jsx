@@ -3,7 +3,7 @@ import "./app.css"; // Global styles
 import Toggle from "./components/Toggle"; // Import the Toggle component
 import Header from "./components/Header"; // Import the Header component
 import useLocalStorage from "use-local-storage";
-import Info from './components/Info'
+import Info from './components/Info';
 import ParticlesBackground from "./components/particles/ParticlesBackground";
 
 

@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact} from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 import "./Info.css";
 import GhostPic from "../assets/photo/GhostPic.jpg";
+
 
 const skills = [
   { name: "HTML", level: 90, icon: <FaHtml5 style={{ color: '#f16529' }} /> }, // Orange color for HTML
@@ -82,11 +83,13 @@ function Info() {
         </div>
       </section>
 
-      <section id="contact" className="content-section">
-        <div className="contact">
-          <button type="button" className="btn btn-primary btn-lg">
-            Contact Me
-          </button>
+      {/* social media icons */}
+      <section id="socials" className="content-section">
+        <h2>Find Me On</h2>
+        <div className="social-icons">
+          <a href="https://www.linkedin.com/in/anchal-magar-b31a94340/" target="_blank" rel="noopener noreferrer">
+           <FaLinkedin size={40} style={{color: "#0A66c2", marginRight:"10px"}} />
+          </a>
         </div>
       </section>
     </>
@@ -94,6 +97,4 @@ function Info() {
 }
 
 export default Info;
-{
-  /* }<span className="progress-text">{skill.level}%</span> #PROGRESS BAR*/
-}
+{/* }<span className="progress-text">{skill.level}%</span> #PROGRESS BAR*/}
