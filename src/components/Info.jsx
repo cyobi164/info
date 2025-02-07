@@ -90,6 +90,9 @@ function Info() {
           <a href="https://www.linkedin.com/in/anchal-magar-b31a94340/" target="_blank" rel="noopener noreferrer">
            <FaLinkedin size={40} style={{color: "#0A66c2", marginRight:"10px"}} />
           </a>
+          <a href="https://github.com/cyobi164" target="_blank" rel="noopener noreferrer">
+            <FaGithub size={40} style={{ color: '#333' }} />
+          </a>
         </div>
       </section>
     </>
