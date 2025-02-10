@@ -22,7 +22,7 @@ const projects = [
     name: "E-commerce UI",
     description:
       "A responsive e-commerce front-end built with HTML, CSS, and JavaScript.",
-    link: "#",
+    link: "https://cyobi164.github.io/product",
   },
   {
     name: "TO-DO-APP",
