@@ -9,6 +9,7 @@ import ParticlesBackground from "./components/particles/ParticlesBackground";
 
 
 
+
 export const App = () => {
   // Check system's dark mode preference
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
