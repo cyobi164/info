@@ -1,15 +1,27 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaLinkedin,
+  FaInstagram,
+  FaGithub,
+  FaEnvelope,
+} from "react-icons/fa";
 import "./Info.css";
 import GhostPic from "../assets/photo/GhostPic.jpg";
 
-
 const skills = [
-  { name: "HTML", level: 90, icon: <FaHtml5 style={{ color: '#f16529' }} /> }, // Orange color for HTML
-  { name: "CSS", level: 90, icon: <FaCss3Alt style={{ color: '#2965f1' }} /> }, // Blue color for CSS
-  { name: "JavaScript", level: 90, icon: <FaJs style={{ color: '#f7df1e' }} /> }, // Yellow color for JavaScript
-  { name: "React", level: 90, icon: <FaReact style={{ color: '#61dafb' }} /> }, // Light blue color for React
+  { name: "HTML", level: 90, icon: <FaHtml5 style={{ color: "#f16529" }} /> }, // Orange color for HTML
+  { name: "CSS", level: 90, icon: <FaCss3Alt style={{ color: "#2965f1" }} /> }, // Blue color for CSS
+  {
+    name: "JavaScript",
+    level: 90,
+    icon: <FaJs style={{ color: "#f7df1e" }} />,
+  }, // Yellow color for JavaScript
+  { name: "React", level: 90, icon: <FaReact style={{ color: "#61dafb" }} /> }, // Light blue color for React
 ];
 
 const projects = [
@@ -40,21 +52,21 @@ function Info() {
           <div className="about-text">
             <h1>About Me</h1>
             <p>
-              I'm a web developer passionate about building clean,
-              user-friendly website. My main focus is on HTML, CSS, JavaScript,
-              ensuring responsive and engaging experiences. I enjoy continuously
-              learning to expand my skill set.
+              I'm a web developer passionate about building clean, user-friendly
+              website. My main focus is on HTML, CSS, JavaScript, ensuring
+              responsive and engaging experiences. I enjoy continuously learning
+              to expand my skill set.
             </p>
             <p>
               ・ Languages: English, Japanese <br />
-              ・ Skills: Frontend development, Web design <br />
-              ・ Looking for: Freelance projects & collaborations
+              ・ Skills: Frontend development, Web design <br />・ Looking for:
+              Freelance projects & collaborations
             </p>
           </div>
         </div>
       </section>
 
-      {/*skill section */}
+      {/* skill section */}
       <section id="skill" className="content-section">
         <h2>My Skill</h2>
         <div className="skill-container">
@@ -67,8 +79,8 @@ function Info() {
         </div>
       </section>
 
-      {/* project section }
-      <section id="projects" className="content-section">
+      {/* project section */}
+      {/* <section id="projects" className="content-section">
         <h2>My Projects</h2>
         <div className="grid gap-4">
           {projects.map((project, index) => (
@@ -81,14 +93,18 @@ function Info() {
             </div>
           ))}
         </div>
-      </section>*/}
+      </section> */}
 
       {/* social media icons */}
       <section id="socials" className="content-section">
-        <h2>Find Me On</h2>
-        <div className="social-icons">
-          <a href="https://www.linkedin.com/in/anchal-magar-b31a94340/" target="_blank" rel="noopener noreferrer">
-           <FaLinkedin size={40} style={{color: "#0A66c2", marginRight:"10px"}} />
+        <h2>Contact</h2>
+        <div className="social-icons" style={{ display: "flex", gap: "15px" }}>
+          <a
+            href="mailto:rana.nchl090@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaEnvelope size={40} style={{ color: "#D44638" }} />
           </a>
         </div>
       </section>
@@ -97,4 +113,18 @@ function Info() {
 }
 
 export default Info;
-{/* }<span className="progress-text">{skill.level}%</span> #PROGRESS BAR*/}
+
+{
+  /* }<span className="progress-text">{skill.level}%</span> #PROGRESS BAR*/
+}
+
+{
+  /*        <div className="social-icons" style={{ display: "flex", gap: "15px" }}>
+          <a
+            href="https://www.linkedin.com/in/anchal-magar-b31a94340/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin size={40} style={{ color: "#0A66c2" }} />
+          </a> */
+}
