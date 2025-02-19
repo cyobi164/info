@@ -67,7 +67,7 @@ function Info() {
         </div>
       </section>
 
-      {/* project section */}
+      {/* project section }
       <section id="projects" className="content-section">
         <h2>My Projects</h2>
         <div className="grid gap-4">
@@ -81,7 +81,7 @@ function Info() {
             </div>
           ))}
         </div>
-      </section>
+      </section>*/}
 
       {/* social media icons */}
       <section id="socials" className="content-section">
