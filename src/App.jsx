@@ -1,36 +1,35 @@
 import React from "react";
 import "./app.css"; // Global styles
-import Toggle from "./components/Toggle"; // Import the Toggle component
-import Header from "./components/Header"; // Import the Header component
+import Toggle from "./components/Toggle"; 
+import Header from "./components/Header"; // Header now includes navigation
 import useLocalStorage from "use-local-storage";
-import Info from './components/Info';
+import Info from "./components/Info";
 import ParticlesBackground from "./components/particles/ParticlesBackground";
-
-
-
-
+import { HashRouter as Router, Route, Routes } from "react-router-dom"; 
 
 export const App = () => {
-  // Check system's dark mode preference
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark, setIsDark] = useLocalStorage("isDark", preference);
 
-  // Toggle dark mode
   const handleToggle = () => {
-    setIsDark(!isDark); // Flip the value of `isDark`
+    setIsDark(!isDark);
   };
 
   return (
-    <div className="App" data-theme={isDark ? "dark" : "light"}>
-      {/*background particle animation */}
-      <ParticlesBackground isDark={isDark} />
-      
-      {/* Header Component */}
-      <Header isChecked={isDark} handleChange={handleToggle}/>
+    <Router>
+      <div className="App" data-theme={isDark ? "dark" : "light"}>
+        {/* Background particle animation */}
+        <ParticlesBackground isDark={isDark} />
 
-      {/*main content */}
-      <Info />
-    </div>
+        {/* Use Header instead of Navbar */}
+        <Header isChecked={isDark} handleChange={handleToggle} />
+
+        {/* Main Content */}
+        <Routes>
+          <Route path="/" element={<Info />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
