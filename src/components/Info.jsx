@@ -108,7 +108,7 @@ function Info() {
             <FaEnvelope size={40} style={{ color: "#D44638" }} />
           </a>
           <a
-            href="https://www.instagram.com/yoshida.kenko.masahide?igsh=eXhhbm9jMDN1YjRi&utm_source=qr"
+            href="https://www.instagram.com/mrg_anchal090/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ margin: "0 10px" }}
