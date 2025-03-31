@@ -8,8 +8,8 @@ import {
   FaLinkedin,
   FaInstagram,
   FaGithub,
-  FaEnvelope,
 } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai"; //mail icon
 import "./Info.css";
 import GhostPic from "../assets/photo/GhostPic.jpg";
 
@@ -99,13 +99,8 @@ function Info() {
       <section id="socials" className="content-section">
         <h2>Contact</h2>
         <div className="social-icons" style={{ display: "flex", gap: "25px" }}>
-          <a
-            href="mailto:rana.nchl090@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ margin: "0 10px" }}
-          >
-            <FaEnvelope size={40} style={{ color: "#D44638" }} />
+          <a href="mailto:rana.nchl090@gmail.com">
+            <AiOutlineMail size={30} color="#D44638" />
           </a>
           <a
             href="https://www.instagram.com/mrg_anchal090/"
