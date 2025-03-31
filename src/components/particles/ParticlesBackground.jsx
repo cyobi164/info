@@ -1,3 +1,4 @@
+{/* 
 import { useCallback, useEffect, useState } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
@@ -65,4 +66,4 @@ const ParticlesBackground = ({ isDark }) => {
   );
 };
 
-export default ParticlesBackground;
+export default ParticlesBackground;*/}
