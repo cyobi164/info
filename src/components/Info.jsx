@@ -98,13 +98,22 @@ function Info() {
       {/* social media icons */}
       <section id="socials" className="content-section">
         <h2>Contact</h2>
-        <div className="social-icons" style={{ display: "flex", gap: "15px" }}>
+        <div className="social-icons" style={{ display: "flex", gap: "25px" }}>
           <a
             href="mailto:rana.nchl090@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ margin: "0 10px" }}
           >
             <FaEnvelope size={40} style={{ color: "#D44638" }} />
+          </a>
+          <a
+            href="https://www.instagram.com/yoshida.kenko.masahide?igsh=eXhhbm9jMDN1YjRi&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ margin: "0 10px" }}
+          >
+            <FaInstagram size={30} color="#E4405F" />
           </a>
         </div>
       </section>

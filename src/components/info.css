@@ -160,21 +160,18 @@
 }
 
 /*social icons*/
-#socials {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 .social-icons {
   display: flex;
-  gap: 15px;
+  align-items: center; /* Ensures all icons are vertically aligned */
+  gap: 25px;
   justify-content: center;
-  align-items: center;
-  margin-top: 10px;
 }
+
+
+.social-icons a {
+  margin: 0 15px; /* Adds more spacing */
+}
+
 
 
 /* Circular Progress Bar 
