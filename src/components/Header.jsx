@@ -55,6 +55,17 @@ function Header({ handleChange, isChecked }) {
         <li className="nav-item">
           <Link
             className="nav-link"
+            to="projects"
+            smooth={true}
+            duration={500}
+            offset={-50}
+          >
+            Projects
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            className="nav-link"
             to="socials"
             smooth={true}
             duration={500}
