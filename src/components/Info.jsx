@@ -32,7 +32,7 @@ const services = [
   },
   {
     name: "Frontend Development",
-    description: `HTML5、CSS3、JavaScript（ES6+）を活用して、
+    description: `HTML5、CSS3、JavaScriptを活用して、
                   インタラクティブなウェブページを開発します。クライアントのビジョンを形にし、
                   堅牢で維持管理しやすいコードを提供します。
                   クロスブラウザ対応を意識し、さまざまなデバイスでの最適化を行います。`,
@@ -61,8 +61,7 @@ const Info = () => {
             </p>
             <p>
               ・ 言語: 英語、日本語 <br />
-              ・ スキル: フロントエンド開発、ウェブデザイン <br />・
-              探しているもの: フリーランス案件 & コラボレーション
+              ・ スキル: フロントエンド開発、ウェブデザイン <br />
             </p>
           </div>
         </div>
