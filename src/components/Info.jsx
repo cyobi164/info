@@ -100,14 +100,13 @@ const Info = () => {
           ))}
         </div>
       </section>
-
-      <section id="service" className="content-section">
+      {/*
+        <section id="service" className="content-section">
         <h2>My Services</h2>
         <div className="service-container">
           {services.map((services, index) =>(
             <div key={index} className="service-card">
               <div className="service-icon">
-                {/*no icon */}
               </div>
               <h3>{services.name}</h3>
               <p>{services.description}</p>
@@ -115,9 +114,10 @@ const Info = () => {
           ))}
         </div>
       </section>
+      */}
+      
       <section id="socials" className="content-section">
-        <h2>お問い合わせ</h2>
-        <p>新しいプロジェクトやコラボレーションのご相談をお待ちしています。</p>
+        <h2>Contacts</h2>
         <div className="social-icons">
           <a
             href="https://line.me/ti/p/aJnU8iunpG"
