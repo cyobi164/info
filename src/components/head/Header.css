@@ -1,0 +1,93 @@
+/* Ensure the navbar sticks to the top center */
+.custom-navbar {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  position: fixed; /* Keep it at the top of the viewport */
+  top: 0; /* Position at the very top */
+  width: 100%; /* Stretch across the width of the page */
+  z-index: 1000; /* Keep it on top of other elements */
+  padding: 20px;
+  background-color: var(--navbar-background);
+  color: var(--text-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Add a white border in dark mode */
+[data-theme="dark"] .custom-navbar {
+  border-bottom: 2px solid white;
+}
+
+/* Center align the nav items */
+.nav {
+  display: flex;
+  gap: 20px; /* Add spacing between links */
+  list-style: none;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Styling the nav links */
+.nav-link {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Bootstrap primary color */
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for links */
+.nav-link:hover {
+  color: var(--link-hover-color); /* Darker shade on hover */
+}
+
+.custom-navbar.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out; /* Fixed typo here */
+}
+
+/* Optional: Make nav items responsive */
+@media (max-width: 768px) {
+  .custom-navbar {
+    padding: 12px 10px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  .nav-link {
+    font-size: 0.9rem !important;
+    padding: 5px 8px !important;
+  }
+
+  /* Adjust the position of the toggle button in mobile */
+  .toggle-container {
+    position: absolute;
+    top: 50px; /* Adjust this to fine-tune the position */
+    right: 1em;
+    z-index: 1010; /* Ensure it stays above the navbar */
+  }
+}
+
+/* Default Light Mode Variables */
+:root {
+  --navbar-background: #ffffff; /* Light background */
+  --text-color: #000000; /* Dark text */
+  --link-color: #007bff; /* Bootstrap primary color */
+  --link-hover-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+  --navbar-background: #121212; /* Dark background */
+  --text-color: #ffffff; /* Light text */
+  --link-color: #76a9fa; /* Lighter blue for visibility */
+  --link-hover-color: #a1c4fd; /* Softer hover effect */
+}

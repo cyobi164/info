@@ -1,0 +1,33 @@
+* {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.App {
+  position: relative; /* Ensure it's above the particles */
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  transition: background-color 250ms ease-in-out;
+  z-index: 1;
+}
+
+[data-theme="dark"] {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Keeps it behind content */
+  pointer-events: none; /* Prevents blocking interactions */
+}
+
+@media (max-width: 768px) {
+  .App {
+    font-size: 15px;
+  }
+}
