@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
-import { SiLine } from "react-icons/si"; 
+import { SiLine } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import "./info.css";
 import Image01 from "../../assets/Photo/backimg.jpg";
@@ -8,10 +8,26 @@ import GhostPic from "../../assets/Photo/GhostPic.jpg";
 
 // Skill data with optional progress
 const skills = [
-  { name: "HTML", icon: <FaHtml5 style={{ color: "#f16529" }} />, progress: 90 },
-  { name: "CSS", icon: <FaCss3Alt style={{ color: "#2965f1" }} />, progress: 85 },
-  { name: "JavaScript", icon: <FaJs style={{ color: "#f7df1e" }} />, progress: 80 },
-  { name: "React", icon: <FaReact style={{ color: "#61dafb" }} />, progress: 75 },
+  {
+    name: "HTML",
+    icon: <FaHtml5 style={{ color: "#f16529" }} />,
+    progress: 90,
+  },
+  {
+    name: "CSS",
+    icon: <FaCss3Alt style={{ color: "#2965f1" }} />,
+    progress: 85,
+  },
+  {
+    name: "JavaScript",
+    icon: <FaJs style={{ color: "#f7df1e" }} />,
+    progress: 80,
+  },
+  {
+    name: "React",
+    icon: <FaReact style={{ color: "#61dafb" }} />,
+    progress: 75,
+  },
 ];
 
 const projects = [
@@ -76,30 +92,33 @@ const Info = () => {
             <h1>About Me</h1>
             <p>
               こんにちは！私のページに来てくれてありがとうございます。
-              私はアンチャルです。ここはインターネット上の小さな私の居場所です。
+              私はアンチェルです。ここはインターネット上の小さな私の居場所です。
               Web開発が大好きで、自分のアイデアを形にして、役立つものを作るのが楽しみです。
               ぜひ気軽に繋がりましょう！
             </p>
-            <button onClick={contact} className="button">Contacts</button>
+            <button onClick={contact} className="button">
+              Contacts
+            </button>
           </div>
         </div>
       </section>
 
       <section id="skill" className="content-section">
         <h2>Skill</h2>
-        <div className="skill-cube-container">
+        <div className="skill-list">
           {skills.map((skill, index) => (
-            <div key={index} className="skill-cube">
-              <div className="cube-face cube-front">{skill.icon}</div>
-              <div className="cube-face cube-back">{skill.name}</div>
+            <div key={index} className="skill-item">
+              <div className="skill-header">
+                {skill.icon}
+                <span className="skill-name">{skill.name}</span>
+              </div>
+              <div className="progress-bar">
+                <div
+                  className="progress-fill"
+                  style={{ width: `${skill.progress}%` }}
+                ></div>
+              </div>
             </div>
-          ))}
-        </div>
-
-        {/* Optional circular progress */}
-        <div className="progress-container">
-          {skills.map((skill, index) => (
-            <CircularProgress key={index} progress={skill.progress} />
           ))}
         </div>
       </section>
@@ -116,7 +135,11 @@ const Info = () => {
               />
               <div className="project-content">
                 <p>{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   プロジェクトを見る
                 </a>
               </div>
@@ -128,7 +151,11 @@ const Info = () => {
       <section id="socials" className="content-section">
         <h2>Contacts</h2>
         <div className="social-icons">
-          <a href="https://line.me/ti/p/aJnU8iunpG" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://line.me/ti/p/aJnU8iunpG"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <SiLine size={30} color="#06C755" />
           </a>
           <a href="mailto:rana.nchl090@gmail.com">
