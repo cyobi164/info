@@ -33,6 +33,9 @@ h1, h2, p {
 #projects {
   background: #222;
 }
+#socials{
+  background: #252525;
+}
 
 /* About section container */
 .about-container {
