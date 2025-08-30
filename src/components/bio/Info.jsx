@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { SiLine } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import "./info.css";
 import Image01 from "../../assets/Photo/backimg.jpg";
+import Cube from "../cube/Cube";
 import GhostPic from "../../assets/Photo/GhostPic.jpg";
 
-// Skill data with optional progress
+// Skill data
 const skills = [
   {
     name: "HTML",
@@ -30,6 +31,7 @@ const skills = [
   },
 ];
 
+// Projects
 const projects = [
   {
     name: "Sample One",
@@ -45,47 +47,40 @@ const contact = () => {
   window.open(gmailUrl, "_blank");
 };
 
-// Circular progress component
-const CircularProgress = ({ progress }) => {
-  const radius = 50;
-  const stroke = 8;
-  const normalizedRadius = radius - stroke * 2;
-  const circumference = normalizedRadius * 2 * Math.PI;
-  const strokeDashoffset = circumference - (progress / 100) * circumference;
-
-  return (
-    <div className="progress-circle">
-      <svg height={radius * 2} width={radius * 2}>
-        <circle
-          stroke="#444"
-          fill="transparent"
-          strokeWidth={stroke}
-          r={normalizedRadius}
-          cx={radius}
-          cy={radius}
-        />
-        <circle
-          stroke="rgb(0,255,136)"
-          fill="transparent"
-          strokeWidth={stroke}
-          r={normalizedRadius}
-          cx={radius}
-          cy={radius}
-          strokeDasharray={`${circumference} ${circumference}`}
-          strokeDashoffset={strokeDashoffset}
-          strokeLinecap="round"
-          transform={`rotate(-90 ${radius} ${radius})`}
-        />
-      </svg>
-      <div className="progress-text">{progress}%</div>
-    </div>
-  );
-};
-
 const Info = () => {
+  const sectionRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    sectionRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      sectionRefs.current.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
     <>
-      <section id="about" className="content-section">
+      {/* About Section */}
+      <section
+        id="about"
+        className="content-section hidden"
+        ref={(el) => (sectionRefs.current[0] = el)}
+      >
         <div className="about-container">
           <img src={GhostPic} alt="プロフィール写真" className="about-image" />
           <div className="about-text">
@@ -103,27 +98,40 @@ const Info = () => {
         </div>
       </section>
 
-      <section id="skill" className="content-section">
-        <h2>Skill</h2>
-        <div className="skill-list">
-          {skills.map((skill, index) => (
-            <div key={index} className="skill-item">
-              <div className="skill-header">
-                {skill.icon}
-                <span className="skill-name">{skill.name}</span>
-              </div>
-              <div className="progress-bar">
-                <div
-                  className="progress-fill"
-                  style={{ width: `${skill.progress}%` }}
-                ></div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Skill Section */}
+      <section id="skill" className="content-section hidden">
+  <div
+    className="skill-container"
+    style={{ display: "flex", alignItems: "flex-start", gap: "40px" }}
+  >
+    <div style={{ flexShrink: 0 }}>
+      <Cube />
+    </div>
 
-      <section id="projects" className="content-section">
+    <div className="skill-list">
+      {skills.map((skill, index) => (
+        <div key={index} className="skill-item">
+          <div className="skill-header">
+            {skill.icon} <span className="skill-name">{skill.name}</span>
+          </div>
+          <div className="progress-bar">
+            <div
+              className="progress-fill"
+              style={{ width: `${skill.progress}%` }}
+            ></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className="content-section hidden"
+        ref={(el) => (sectionRefs.current[2] = el)}
+      >
         <h2>プロジェクト</h2>
         <div className="project-grid">
           {projects.map((project, index) => (
@@ -148,6 +156,7 @@ const Info = () => {
         </div>
       </section>
 
+      {/* Social Section */}
       <section id="socials" className="content-section">
         <h2>Contacts</h2>
         <div className="social-icons">

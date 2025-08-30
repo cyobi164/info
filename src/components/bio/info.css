@@ -95,6 +95,7 @@ h1, h2, p {
   100% { transform: scale(1.1); }
 }
 
+
 /* ===== Project Section ===== */
 .project-grid {
   display: flex;
@@ -138,6 +139,19 @@ h1, h2, p {
   color: #ff9800;
 }
 
+
+/* ===== Skill Section ===== */
+.skill-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px; /* space between cube and skill list */
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* responsive on smaller screens */
+}
+
+
 /* Skill list container */
 .skill-list {
   display: flex;
@@ -147,7 +161,6 @@ h1, h2, p {
   margin-left: 0;   /* stick to the left */
   margin-right: auto;
 }
-
 
 /* Each skill row */
 .skill-item {
@@ -189,10 +202,10 @@ h1, h2, p {
   background: #444;
 }
 
-
 [data-theme="dark"] .cube-face {
   background: linear-gradient(135deg, #a855f7, #6366f1, #0ea5e9);
 }
+
 
 /* ===== Circular Progress (optional) ===== */
 .progress-container {
@@ -219,6 +232,7 @@ h1, h2, p {
   color: #000;
 }
 
+
 /* ===== Social Icons ===== */
 .social-icons {
   display: flex;
@@ -228,6 +242,7 @@ h1, h2, p {
 }
 
 .social-icons a { margin: 0 15px; }
+
 
 /* ===== Services ===== */
 .service-container {
@@ -258,6 +273,7 @@ h1, h2, p {
 .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
 .service-card p { font-size: 0.95rem; line-height: 1.6; white-space: pre-line; }
 
+
 /* ===== Light/Dark Variables ===== */
 :root {
   --skill-card-background: #f9f9f9;
@@ -271,6 +287,7 @@ h1, h2, p {
   --text-color: #fff;
   --about-image-shadow: 0 0 15px rgba(255,255,255,0.6);
 }
+
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
