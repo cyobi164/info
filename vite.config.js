@@ -8,7 +8,4 @@ export default defineConfig({
   server: {
     port: 3000
   },
-  define: {
-    'window.Stats': 'Stats', // This makes Stats.js available globally if needed.
-  }
 });

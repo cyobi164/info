@@ -3,8 +3,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { SiLine } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import "./info.css";
-import Image01 from "../../assets/Photo/backimg.jpg";
-import Cube from "../cube/Cube";
+import Yoshi from "../../assets/Photo/img.JPG"
 import GhostPic from "../../assets/Photo/GhostPic.jpg";
 
 // Skill data
@@ -37,7 +36,7 @@ const projects = [
     name: "Sample One",
     description: "シンプルで洗練されたウェブデザインプロジェクト。",
     link: "https://cyobi164.github.io/yoshida/",
-    img: Image01,
+    img: Yoshi, // Assuming an image for the project
   },
 ];
 
@@ -100,31 +99,25 @@ const Info = () => {
 
       {/* Skill Section */}
       <section id="skill" className="content-section hidden">
-  <div
-    className="skill-container"
-    style={{ display: "flex", alignItems: "flex-start", gap: "40px" }}
-  >
-    <div style={{ flexShrink: 0 }}>
-      <Cube />
-    </div>
-
-    <div className="skill-list">
-      {skills.map((skill, index) => (
-        <div key={index} className="skill-item">
-          <div className="skill-header">
-            {skill.icon} <span className="skill-name">{skill.name}</span>
-          </div>
-          <div className="progress-bar">
-            <div
-              className="progress-fill"
-              style={{ width: `${skill.progress}%` }}
-            ></div>
+        <h2>Skill</h2>
+        <div className="skill-container">
+          <div className="skill-list">
+            {skills.map((skill, index) => (
+              <div key={index} className="skill-item">
+                <div className="skill-header">
+                  {skill.icon} <span className="skill-name">{skill.name}</span>
+                </div>
+                <div className="progress-bar">
+                  <div
+                    className="progress-fill"
+                    style={{ width: `${skill.progress}%` }}
+                  ></div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Projects Section */}
       <section
@@ -148,7 +141,7 @@ const Info = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  プロジェクトを見る
+                  開く
                 </a>
               </div>
             </div>
