@@ -3,8 +3,9 @@ import { AiOutlineMail } from "react-icons/ai";
 import { SiLine } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import "./info.css";
-import Yoshi from "../../assets/Photo/img.JPG"
+import Yoshi from "../../assets/Photo/img.JPG";
 import GhostPic from "../../assets/Photo/GhostPic.jpg";
+import Cube from "../../assets/Photo/cube.jpg";
 
 // Skill data
 const skills = [
@@ -37,6 +38,15 @@ const projects = [
     description: "シンプルで洗練されたウェブデザインプロジェクト。",
     link: "https://cyobi164.github.io/yoshida/",
     img: Yoshi, // Assuming an image for the project
+  },
+];
+/*==blender==*/
+const blender = [
+  {
+    name: "Blender",
+    description: "Coming soon",
+    link: null,
+    img: Cube,
   },
 ];
 
@@ -143,6 +153,21 @@ const Info = () => {
                 >
                   開く
                 </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/*Blender section*/}
+      <section id="blender" className="content-section hidden">
+        <h2>Blender</h2>
+        <div className="blender-container">
+          {blender.map((item, index) => (
+            <div key={index} className="blender-card">
+              <img src={item.img} alt={item.name} className="blender-img" />
+              <div className="overlay">
+                <span>Coming Soon</span>
               </div>
             </div>
           ))}

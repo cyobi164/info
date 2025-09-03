@@ -207,6 +207,65 @@ p {
   background: #444;
 }
 
+/* ===== Blender ===== */
+.blender-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Card container */
+.blender-card {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* bigger for desktops */
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Image fills the section */
+.blender-img {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom on hover */
+.blender-card:hover .blender-img {
+  transform: scale(1.05);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* light black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+/* Show overlay on hover */
+.blender-card:hover .overlay {
+  opacity: 1;
+}
+
 /* ===== Social Icons ===== */
 .social-icons {
   display: flex;
@@ -280,6 +339,9 @@ p {
   .about-container {
     gap: 30px;
   }
+  .blender-card{
+    max-width: 700px;
+  }
 }
 
 /* Tablets landscape */
@@ -287,6 +349,9 @@ p {
   .about-text {
     font-size: 1rem;
     margin-left: 0;
+  }
+  .blender-card{
+    max-width: 600px;
   }
 }
 
@@ -313,6 +378,10 @@ p {
   .project-grid {
     flex-direction: column;
     align-items: center;
+  }
+  
+  .blender-card{
+    max-width: 100%;
   }
 }
 
@@ -342,5 +411,9 @@ p {
 
   .skill-container {
     grid-template-columns: 1fr;
+  }
+
+  .blender-card{
+    max-height: 300px;
   }
 }
