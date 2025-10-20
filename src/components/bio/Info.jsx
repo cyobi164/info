@@ -3,32 +3,16 @@ import { AiOutlineMail } from "react-icons/ai";
 import { SiLine } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import "./info.css";
-import Yoshi from "../../assets/Photo/img.JPG";
+import Yoshi from "../../assets/Photo/img.jpg";
 import GhostPic from "../../assets/Photo/GhostPic.jpg";
-import Cube from "../../assets/Photo/cube.jpg";
+import MenuService from "../menu service/menu";
 
 // Skill data
 const skills = [
-  {
-    name: "HTML",
-    icon: <FaHtml5 style={{ color: "#f16529" }} />,
-    progress: 90,
-  },
-  {
-    name: "CSS",
-    icon: <FaCss3Alt style={{ color: "#2965f1" }} />,
-    progress: 85,
-  },
-  {
-    name: "JavaScript",
-    icon: <FaJs style={{ color: "#f7df1e" }} />,
-    progress: 80,
-  },
-  {
-    name: "React",
-    icon: <FaReact style={{ color: "#61dafb" }} />,
-    progress: 75,
-  },
+  { name: "HTML", icon: <FaHtml5 style={{ color: "#f16529" }} />, progress: 90 },
+  { name: "CSS", icon: <FaCss3Alt style={{ color: "#2965f1" }} />, progress: 85 },
+  { name: "JavaScript", icon: <FaJs style={{ color: "#f7df1e" }} />, progress: 80 },
+  { name: "React", icon: <FaReact style={{ color: "#61dafb" }} />, progress: 75 },
 ];
 
 // Projects
@@ -37,16 +21,7 @@ const projects = [
     name: "Sample One",
     description: "シンプルで洗練されたウェブデザインプロジェクト。",
     link: "https://cyobi164.github.io/yoshida/",
-    img: Yoshi, // Assuming an image for the project
-  },
-];
-/*==blender==*/
-const blender = [
-  {
-    name: "Blender",
-    description: "Coming soon",
-    link: null,
-    img: Cube,
+    img: Yoshi,
   },
 ];
 
@@ -63,33 +38,23 @@ const Info = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("show");
         });
       },
       { threshold: 0.2 }
     );
 
-    sectionRefs.current.forEach((el) => {
-      if (el) observer.observe(el);
-    });
+    sectionRefs.current.forEach((el) => el && observer.observe(el));
 
     return () => {
-      sectionRefs.current.forEach((el) => {
-        if (el) observer.unobserve(el);
-      });
+      sectionRefs.current.forEach((el) => el && observer.unobserve(el));
     };
   }, []);
 
   return (
     <>
       {/* About Section */}
-      <section
-        id="about"
-        className="content-section hidden"
-        ref={(el) => (sectionRefs.current[0] = el)}
-      >
+      <section id="about" className="content-section hidden" ref={(el) => (sectionRefs.current[0] = el)}>
         <div className="about-container">
           <img src={GhostPic} alt="プロフィール写真" className="about-image" />
           <div className="about-text">
@@ -100,9 +65,7 @@ const Info = () => {
               Web開発が大好きで、自分のアイデアを形にして、役立つものを作るのが楽しみです。
               ぜひ気軽に繋がりましょう！
             </p>
-            <button onClick={contact} className="button">
-              Contacts
-            </button>
+            <button onClick={contact} className="button">Contacts</button>
           </div>
         </div>
       </section>
@@ -118,10 +81,7 @@ const Info = () => {
                   {skill.icon} <span className="skill-name">{skill.name}</span>
                 </div>
                 <div className="progress-bar">
-                  <div
-                    className="progress-fill"
-                    style={{ width: `${skill.progress}%` }}
-                  ></div>
+                  <div className="progress-fill" style={{ width: `${skill.progress}%` }}></div>
                 </div>
               </div>
             ))}
@@ -129,46 +89,41 @@ const Info = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section
-        id="projects"
-        className="content-section hidden"
-        ref={(el) => (sectionRefs.current[2] = el)}
-      >
-        <h2>プロジェクト</h2>
-        <div className="project-grid">
-          {projects.map((project, index) => (
-            <div key={index} className="project-card">
-              <img
-                src={project.img}
-                alt={project.name}
-                className="project-img"
-              />
-              <div className="project-content">
-                <p>{project.description}</p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  開く
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Services Section (now includes Projects) */}
+      <section id="service" className="content-section hidden">
+        <h2>Services</h2>
+        <div className="service-container">
+          {/* Service Card 1 */}
+          <div className="service-card">
+            <h3>Digital Wedding Menu</h3>
+            <p>
+              Guests can simply scan a QR code to view the course and drink menu.
+              Perfect for people who want to use less paper.
+            </p>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="service-btn"
+            >
+              View Demo
+            </a>
+          </div>
 
-      {/*Blender section*/}
-      <section id="blender" className="content-section hidden">
-        <h2>Blender</h2>
-        <div className="blender-container">
-          {blender.map((item, index) => (
-            <div key={index} className="blender-card">
-              <img src={item.img} alt={item.name} className="blender-img" />
-              <div className="overlay">
-                <span>Coming Soon</span>
-              </div>
+          {/* Project cards now shown here */}
+          {projects.map((project, index) => (
+            <div key={index} className="service-card">
+              <h3>{project.name}</h3>
+              <img src={project.img} alt={project.name} className="service-img" />
+              <p>{project.description}</p>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="service-btn"
+              >
+                View Project
+              </a>
             </div>
           ))}
         </div>
@@ -178,11 +133,7 @@ const Info = () => {
       <section id="socials" className="content-section">
         <h2>Contacts</h2>
         <div className="social-icons">
-          <a
-            href="https://line.me/ti/p/aJnU8iunpG"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://line.me/ti/p/aJnU8iunpG" target="_blank" rel="noopener noreferrer">
             <SiLine size={30} color="#06C755" />
           </a>
           <a href="mailto:rana.nchl090@gmail.com">

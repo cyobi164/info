@@ -12,13 +12,6 @@ p {
   font-family: "Yusei Magic", sans-serif;
 }
 
-.about-text p,
-.project-card h3,
-.project-card p,
-.project-card a {
-  font-family: "Noto Sans JP", sans-serif;
-}
-
 /* ===== Sections ===== */
 .content-section {
   padding: 80px 10%;
@@ -39,7 +32,7 @@ p {
 .about-container {
   margin-top: 100px;
   display: flex;
-  flex-wrap: wrap; /* allow wrapping on smaller screens */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 40px;
@@ -50,7 +43,7 @@ p {
 
 .about-image {
   width: 100%;
-  max-width: 350px; /* responsive max */
+  max-width: 350px;
   height: auto;
   border-radius: 50%;
   box-shadow: var(--about-image-shadow);
@@ -96,50 +89,6 @@ p {
   }
 }
 
-/* ===== Project Section ===== */
-.project-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.project-card {
-  background: var(--skill-card-background);
-  box-shadow: var(--skill-card-shadow);
-  padding: 15px;
-  border-radius: 10px;
-  flex: 1 1 280px;
-  max-width: 320px;
-  text-align: center;
-  transition: transform 0.3s;
-  overflow: hidden;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-.project-img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
-
-.project-card a {
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #61dafb;
-  transition: color 0.2s;
-}
-
-.project-card a:hover {
-  color: #ff9800;
-}
-
 /* ===== Skill Section ===== */
 .skill-container {
   display: flex;
@@ -163,7 +112,6 @@ p {
   gap: 10px;
 }
 
-/* === Skill Header (light mode) === */
 .skill-header {
   display: flex;
   align-items: center;
@@ -207,78 +155,7 @@ p {
   background: #444;
 }
 
-/* ===== Blender ===== */
-.blender-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 100%;
-}
-
-/* Card container */
-.blender-card {
-  position: relative;
-  width: 100%;
-  max-width: 800px; /* bigger for desktops */
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-/* Image fills the section */
-.blender-img {
-  width: 100%;
-  height: auto;
-  max-height: 450px;
-  object-fit: cover;
-  display: block;
-  border-radius: 12px;
-  transition: transform 0.4s ease;
-}
-
-/* Zoom on hover */
-.blender-card:hover .blender-img {
-  transform: scale(1.05);
-}
-
-/* Overlay */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* light black */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 12px;
-}
-
-/* Show overlay on hover */
-.blender-card:hover .overlay {
-  opacity: 1;
-}
-
-/* ===== Social Icons ===== */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  align-items: center;
-}
-
-.social-icons a {
-  margin: 0 15px;
-}
-
-/* ===== Services ===== */
+/* ===== Services Section (includes projects) ===== */
 .service-container {
   display: flex;
   flex-wrap: wrap;
@@ -297,11 +174,60 @@ p {
   max-width: 300px;
   flex: 1 1 250px;
   text-align: left;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+  font-family: "Yusei Magic", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.service-btn {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #61dafb;
+  transition: color 0.2s ease;
+}
+
+.service-btn:hover {
+  color: #ff9800;
+}
+
+/* Service image (for projects) */
+.service-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ===== Social Icons ===== */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  align-items: center;
+}
+
+.social-icons a {
+  margin: 0 15px;
 }
 
 /* ===== Light/Dark Variables ===== */
@@ -318,29 +244,12 @@ p {
   --about-image-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
-/* === Section backgrounds only for dark mode === */
-[data-theme="dark"] #about {
-  background: #222;
-}
-[data-theme="dark"] #skill {
-  background: #252525;
-}
-[data-theme="dark"] #projects {
-  background: #222;
-}
-[data-theme="dark"] #socials {
-  background: #252525;
-}
-
 /* ===== Responsive Breakpoints ===== */
 
 /* Large desktop */
 @media (max-width: 1200px) {
   .about-container {
     gap: 30px;
-  }
-  .blender-card{
-    max-width: 700px;
   }
 }
 
@@ -349,9 +258,6 @@ p {
   .about-text {
     font-size: 1rem;
     margin-left: 0;
-  }
-  .blender-card{
-    max-width: 600px;
   }
 }
 
@@ -375,13 +281,9 @@ p {
     gap: 20px;
   }
 
-  .project-grid {
+  .service-container {
     flex-direction: column;
     align-items: center;
-  }
-  
-  .blender-card{
-    max-width: 100%;
   }
 }
 
@@ -395,25 +297,17 @@ p {
     font-size: 0.9rem;
   }
 
-  .about-text p {
-    font-size: 0.9rem;
-  }
-
   .service-card {
     max-width: 100%;
     padding: 15px;
     font-size: 0.9rem;
   }
 
-  .project-card {
-    max-width: 90%;
-  }
-
   .skill-container {
     grid-template-columns: 1fr;
   }
 
-  .blender-card{
-    max-height: 300px;
+  .service-img {
+    height: 120px;
   }
 }
