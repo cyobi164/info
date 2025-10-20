@@ -5,7 +5,7 @@ import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import "./info.css";
 import Yoshi from "../../assets/Photo/img.jpg";
 import GhostPic from "../../assets/Photo/GhostPic.jpg";
-import MenuService from "../menu service/menu";
+
 
 // Skill data
 const skills = [
